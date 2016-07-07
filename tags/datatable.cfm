@@ -1,11 +1,11 @@
 <cfsetting enablecfoutputonly=true>
 <!---
 	Name         : datatable.cfm
-	Author       : Raymond Camden 
+	Author       : Raymond Camden
 	Created      : June 02, 2004
 	Last Updated : July 23, 2004
 	History      : JS fix (7/23/04)
-	Purpose		 : A VERY app specific datable tag. 
+	Purpose		 : A VERY app specific datable tag.
 --->
 
 <cfif thisTag.hasEndTag and thisTag.executionMode is "start">
@@ -31,7 +31,7 @@
 <cfif structKeyExists(thisTag,"assocAttribs")>
 	<cfset attributes.list = "">
 	<cfset attributes.labellist = "">
-	
+
 	<cfloop index="x" from="1" to="#arrayLen(thisTag.assocAttribs)#">
 		<cfset attributes.list = listAppend(attributes.list, thisTag.assocAttribs[x].name)>
 		<cfif structKeyExists(thisTag.assocAttribs[x], "label")>
@@ -41,7 +41,7 @@
 		</cfif>
 		<cfif structKeyExists(thisTag.assocAttribs[x], "format")>
 			<cfset formatCols[thisTag.assocAttribs[x].name] = thisTag.assocAttribs[x].format>
-		</cfif>		
+		</cfif>
 		<cfset attributes.labellist = listAppend(attributes.labellist, label)>
 		<cfif structKeyExists(thisTag.assocAttribs[x], "width")>
 			<cfset colWidths[label] = thisTag.assocAttribs[x].width>
@@ -79,7 +79,7 @@ function checksubmit() {
 
 <p>
 <form name="listing" action="#cgi.script_name#?#attributes.queryString#" method="post">
-<table cellspacing=0 cellpadding=5 class="adminListTable">
+<table cellspacing=0 cellpadding=5 class="adminListTable" width="100%">
 	<cfset qs = cgi.query_string>
 	<cfset qs = reReplaceNoCase(qs,"page=[0-9]+","")>
 	<cfif right(qs,1) is "&">
@@ -89,8 +89,8 @@ function checksubmit() {
 	<cfif not len(qs)>
 		<cfset qs = "pref=1">
 	</cfif>
-	
-	
+
+
 	<cfif attributes.data.recordCount gt attributes.perpage>
 		<tr>
 		<td colspan="#1+listLen(attributes.labelList)#">
@@ -140,7 +140,7 @@ function checksubmit() {
 						<cfcase value="yesno">
 							<cfset value = yesNoFormat(value)>
 						</cfcase>
-						
+
 						<cfcase value="datetime">
 							<cfset value = dateFormat(value,"mm/dd/yy") & " " & timeFormat(value,"h:mm tt")>
 						</cfcase>

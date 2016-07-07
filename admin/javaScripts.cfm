@@ -22,7 +22,7 @@ menu4[0]='<a href="index.cfm">Admin Home</a>'
 menu4[1]='<a href="../">Soundings Home</a>'
 menu4[2]='<a href="index.cfm?logout=1">Logout</a>'
 
-	
+
 var menuwidth='185px' //default menu width
 var menubgcolor='#407ED8'  //menu bgcolor
 var disappeardelay=250  //menu disappear speed onMouseout (in miliseconds)
@@ -33,8 +33,9 @@ var hidemenu_onclick="yes" //hide menu when user clicks within menu?
 var ie4=document.all
 var ns6=document.getElementById&&!document.all
 
-if (ie4||ns6)
-document.write('<div id="dropmenudiv" style="visibility:hidden;width:'+menuwidth+';background-color:'+menubgcolor+'" onMouseover="clearhidemenu()" onMouseout="dynamichide(event)"></div>')
+if (ie4||ns6){
+	//document.write('<div id="dropmenudiv" style="visibility:hidden;width:'+menuwidth+';background-color:'+menubgcolor+'" onMouseover="clearhidemenu()" onMouseout="dynamichide(event)"></div>')
+}
 
 function getposOffset(what, offsettype){
 var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;

@@ -1,14 +1,15 @@
 <cfsilent>
+	<cfparam name="screenwidth" default="575">
 <!---
 	Name         : C:\projects\soundings\wwwroot\soundings\admin\stats_mc.cfm
-	Author       : Raymond Camden 
+	Author       : Raymond Camden
 	Created      : 03/02/06
-	Last Updated : 
-	History      : 
-	style="style.xml" 
+	Last Updated :
+	History      :
+	style="style.xml"
 --->
 </cfsilent>
-<cfchart format="#application.chartformat#" chartWidth="575" chartHeight="575"
+<cfchart format="#application.chartformat#" chartWidth="#screenwidth#" chartHeight="575"
 		 gridlines="#max+1#" style="style.xml" scaleFrom="0">
 	<cfchartseries type="bar" paintStyle="raise" seriesColor="#currentColor#">
 		<cfif structKeyExists(data,"other")>
@@ -17,6 +18,6 @@
 		<cfloop query="answers">
 			<cfchartdata item="#answer#" value="#data[id]#">
 		</cfloop>
-	</cfchartseries> 
+	</cfchartseries>
 	<cfset currentColorIndex = currentColorIndex + 1>
 </cfchart>

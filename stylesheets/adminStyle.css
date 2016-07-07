@@ -1,8 +1,93 @@
+html, body{
+  height:100%;
+}
+
 body {
-	margin-top: 0px;
+	margin: 0;
+	padding: 0;
+}
+
+header {
 	background-image: url(../images/bg.gif);
 	background-repeat: repeat-x;
+	background-position-x: top;
+	height: 180px;
 }
+
+main {
+	padding: 10px;
+	background-color: #f5f5f5;
+	height: 100%;
+}
+
+#primarymenu {
+	border-bottom: solid 1px #aaa;
+	height:32px;
+}
+
+#primarymenu ul {
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#primarymenu > ul > li {
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+	font-family:"HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#primarymenu ul li {
+	position:relative;
+	float:left;
+	color: rgb(64,126,216);
+}
+
+
+#primarymenu ul li.current-menu-item {
+	background:#ddd
+}
+
+#primarymenu ul li:hover
+{
+	background:#f6f6f6
+}
+
+#primarymenu ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+
+#primarymenu ul ul li
+{
+	float:none;
+	width:200px
+}
+
+#primarymenu ul ul a
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+
+#primarymenu ul li:hover > ul
+{
+	display:block
+}
+
 td {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
